@@ -80,5 +80,17 @@ else:
     st.dataframe(df_filtre.head())
 
     st.subheader("Évolution du Chiffre d'Affaires")
-    donnees_graphique = df_filtre.groupby('Date')['Chiffre d\'Affaires (€)'].sum()
-    st.line_chart(donnees_graphique)
+    # On prépare proprement les données pour Plotly (.reset_index() transforme la Série en vrai Tableau)
+    donnees_graphique = df_filtre.groupby('Date')['Chiffre d\'Affaires (€)'].sum().reset_index()
+
+    # On crée un beau graphique avec Plotly Express
+    fig = px.line(
+        donnees_graphique, 
+        x='Date', 
+        y='Chiffre d\'Affaires (€)', 
+        markers=True, # Ajoute des petits points sur la courbe
+        color_discrete_sequence=['#FF4B4B'] # La couleur rouge de Streamlit !
+    )
+
+    # On demande à Streamlit d'afficher ce graphique Plotly
+    st.plotly_chart(fig, use_container_width=True)
