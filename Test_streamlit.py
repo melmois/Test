@@ -78,7 +78,7 @@ else:
     col2.metric("Chiffre d'Affaires", f"{df_filtre['Chiffre d\'Affaires (€)'].sum()} €")
 
     st.subheader("Aperçu des données")
-    st.dataframe(df_filtre.head())
+    st.dataframe(df_filtre.head(), hide_index = True)
 
     st.subheader("Évolution du Chiffre d'Affaires")
     # On prépare proprement les données pour Plotly (.reset_index() transforme la Série en vrai Tableau)
