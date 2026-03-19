@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 
 # Configuration de la page
-st.set_page_config(page_title="Tableau de Bord V2", page_icon="🚀")
+st.set_page_config(page_title="Tableau de Bord V2", page_icon="🚀", layout = "wide")
 st.title("🚀 Suivi des Ventes - Version Avancée")
 
 # 1. Génération des données (toujours avec notre cache en mémoire !)
