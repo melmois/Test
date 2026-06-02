@@ -42,7 +42,8 @@ gridOptions = gb.build()
 AgGrid(
     df,
     gridOptions=gridOptions,
-    height=500, # Hauteur du tableau en pixels
-    fit_columns_on_grid_load=True, # Ajuste la largeur des colonnes à l'écran
-    theme="alpine" # Thème clair très propre (tu peux essayer "balham" ou "streamlit")
+    height=500, 
+    fit_columns_on_grid_load=True, 
+    theme="alpine",
+    enable_enterprise_modules=True  # <--- C'est cette ligne magique qui manquait !
 )
