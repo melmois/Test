@@ -32,7 +32,7 @@ gb.configure_column("KPI_3_Defauts", aggFunc='sum')
 # C. Quelques options de design pour le confort
 gb.configure_grid_options(
     groupDefaultExpanded=0, # Met 1 pour tout dérouler par défaut, ou 0 pour tout replier
-    suppressAggFuncInHeader=True # Évite d'écrire "sum(KPI_1)" dans l'en-tête
+    suppressAggFuncInHeader=True, # Évite d'écrire "sum(KPI_1)" dans l'en-tête
 
     # --- LA NOUVEAUTÉ EST ICI ---
     # On configure la colonne "Group" qui est générée automatiquement
